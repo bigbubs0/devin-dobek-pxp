@@ -1,3 +1,7 @@
+// ============================================================
+// DEVIN DOBEK — BROADCAST MONITOR INTERACTIONS
+// ============================================================
+
 // ===== NAV SCROLL EFFECT =====
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
@@ -16,7 +20,6 @@ hamburger.addEventListener('click', () => {
     document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
 });
 
-// Close mobile nav when a link is clicked
 mobileNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -30,18 +33,17 @@ mobileNav.querySelectorAll('a').forEach(link => {
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Stagger siblings: find all .reveal children in the same parent
             const parent = entry.target.parentElement;
             const siblings = parent.querySelectorAll(':scope > .reveal');
             if (siblings.length > 1) {
                 const index = Array.from(siblings).indexOf(entry.target);
-                entry.target.style.transitionDelay = `${index * 100}ms`;
+                entry.target.style.transitionDelay = `${index * 120}ms`;
             }
             entry.target.classList.add('vis');
             revealObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
@@ -54,4 +56,46 @@ function playVideo(el, videoId) {
     iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0;';
     el.innerHTML = '';
     el.appendChild(iframe);
+
+    // Update monitor frame state if present
+    const monitorFrame = el.closest('.monitor-frame');
+    if (monitorFrame) {
+        const tally = monitorFrame.querySelector('.monitor-tally');
+        const tc = monitorFrame.querySelector('.monitor-tc');
+        if (tally) tally.classList.add('recording');
+        if (tc) tc.textContent = 'PLAYING';
+    }
 }
+
+// ===== RUNNING TIMECODE =====
+(function startTimecode() {
+    const tcEl = document.querySelector('.hero-timecode');
+    if (!tcEl) return;
+    const startTime = Date.now();
+
+    function update() {
+        const elapsed = Date.now() - startTime;
+        const h = String(Math.floor(elapsed / 3600000)).padStart(2, '0');
+        const m = String(Math.floor((elapsed % 3600000) / 60000)).padStart(2, '0');
+        const s = String(Math.floor((elapsed % 60000) / 1000)).padStart(2, '0');
+        const f = String(Math.floor((elapsed % 1000) / 33.33)).padStart(2, '0');
+        tcEl.textContent = `${h}:${m}:${s}:${f}`;
+        requestAnimationFrame(update);
+    }
+    // Delay start to match the timecode fade-in animation
+    setTimeout(() => requestAnimationFrame(update), 1200);
+})();
+
+// ===== HERO PARALLAX =====
+(function heroParallax() {
+    const heroBg = document.querySelector('.hero-bg');
+    if (!heroBg) return;
+    const heroHeight = window.innerHeight;
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        if (scrollY < heroHeight) {
+            heroBg.style.transform = `translateY(${scrollY * 0.15}px)`;
+        }
+    }, { passive: true });
+})();
