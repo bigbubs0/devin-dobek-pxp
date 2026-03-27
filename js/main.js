@@ -112,39 +112,12 @@ function playVideo(el, videoId) {
     }, { passive: true });
 })();
 
-// ===== SIGNAL ACQUISITION + HERO ENTRANCE =====
+// ===== SIGNAL ACQUISITION OVERLAY =====
 (function signalAcquisition() {
     const overlay = document.querySelector('.signal-overlay');
-    const hero = document.querySelector('.hero');
-
-    // Staggered hero entrance after signal overlay clears
-    const entranceSequence = [
-        { sel: '.hero-eyebrow', delay: 100 },
-        { sel: '.hero-name', delay: 250 },
-        { sel: '.hero-tagline', delay: 500 },
-        { sel: '.hero-waveform', delay: 650 },
-        { sel: '.hero-stats-bar', delay: 700 },
-        { sel: '.hero-ctas', delay: 800 },
-        { sel: '.hero-live', delay: 900 },
-        { sel: '.hero-timecode', delay: 1000 }
-    ];
-
-    setTimeout(() => {
-        if (hero) hero.classList.add('hero-active');
-        entranceSequence.forEach(({ sel, delay }) => {
-            const el = document.querySelector(sel);
-            if (!el) return;
-            setTimeout(() => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0) scale(1) translateX(0)';
-            }, delay);
-        });
-    }, 1200);
-
-    // Clean up overlay
-    if (overlay) {
-        setTimeout(() => overlay.remove(), 2000);
-    }
+    if (!overlay) return;
+    // CSS handles fade-out animation. JS cleans up the DOM element.
+    setTimeout(() => overlay.remove(), 2000);
 })();
 
 // ===== HERO STAT COUNTER =====
