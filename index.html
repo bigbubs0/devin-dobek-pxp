@@ -13,11 +13,15 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
     <a href="#main" class="skip-link">Skip to main content</a>
+    <div class="signal-overlay" aria-hidden="true">
+        <div class="signal-text">SIGNAL ACQUIRED</div>
+    </div>
     <div class="grain" aria-hidden="true"></div>
 
     <nav class="nav">
@@ -56,6 +60,11 @@
             <p class="hero-eyebrow">Professional Hockey Broadcaster</p>
             <h1 class="hero-name">Devin<br>Dobek</h1>
             <p class="hero-tagline"><strong>Play-by-Play</strong> &nbsp;|&nbsp; Voice of the Biloxi Breakers &nbsp;|&nbsp; FPHL</p>
+            <div class="hero-waveform" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
             <div class="hero-stats-bar">
                 <div class="stat-ticker"><span class="stat-val">10</span><span class="stat-label">Yrs on Mic</span></div>
                 <div class="stat-divider"></div>
@@ -80,7 +89,7 @@
                 <h2 class="title reveal">Hear the Call</h2>
 
                 <!-- FEATURED REEL — Broadcast Monitor Frame -->
-                <div class="demo-featured reveal">
+                <div class="demo-featured reveal" data-reveal="slide-from-left">
                     <div class="monitor-frame">
                         <div class="monitor-header">
                             <span class="monitor-tally" aria-hidden="true"></span>
@@ -105,7 +114,7 @@
 
                 <!-- DEMO GRID -->
                 <div class="demo-grid">
-                    <div class="demo-card reveal" id="vid-dashers-card">
+                    <div class="demo-card reveal" data-reveal="stagger-right" id="vid-dashers-card">
                         <div class="video-wrap-sm" id="vid-dashers" onclick="playVideo(this,'UMS5oq8TeLI')">
                             <img src="https://img.youtube.com/vi/UMS5oq8TeLI/maxresdefault.jpg" alt="Danville Dashers PxP Broadcast Reel thumbnail" class="vid-thumb">
                             <div class="vid-overlay">
@@ -121,7 +130,7 @@
                         </div>
                     </div>
 
-                    <a href="https://www.wlox.com/video/2025/10/16/biloxi-breakers-celebrate-national-sports-day/" target="_blank" rel="noopener" class="demo-card reveal" style="text-decoration:none;color:inherit;">
+                    <a href="https://www.wlox.com/video/2025/10/16/biloxi-breakers-celebrate-national-sports-day/" target="_blank" rel="noopener" class="demo-card reveal" data-reveal="stagger-right" style="text-decoration:none;color:inherit;">
                         <div class="video-wrap-sm">
                             <img src="images/wlox-thumb.jpg" alt="Devin Dobek on WLOX TV for National Sports Day" class="vid-thumb">
                             <div class="vid-overlay">
@@ -141,7 +150,7 @@
             </div>
         </section>
 
-        <div class="section-divider" aria-hidden="true"></div>
+        <div class="section-divider waveform" aria-hidden="true"><svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0,12 Q30,4 60,12 T120,12 T180,12 T240,12 T300,12 T360,12 T420,12 T480,12 T540,12 T600,12 T660,12 T720,12 T780,12 T840,12 T900,12 T960,12 T1020,12 T1080,12 T1140,12 T1200,12" stroke="var(--accent-blue)" stroke-width="1" fill="none" opacity="0.3"/><path d="M0,12 Q40,18 80,12 T160,12 T240,12 T320,12 T400,12 T480,12 T560,12 T640,12 T720,12 T800,12 T880,12 T960,12 T1040,12 T1120,12 T1200,12" stroke="var(--accent-red)" stroke-width="0.5" fill="none" opacity="0.15"/></svg></div>
 
         <!-- ABOUT + ORIGIN — Combined -->
         <section class="about" id="about">
@@ -180,55 +189,64 @@
             </div>
         </section>
 
-        <div class="section-divider" aria-hidden="true"></div>
+        <div class="section-divider waveform" aria-hidden="true"><svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0,12 Q30,4 60,12 T120,12 T180,12 T240,12 T300,12 T360,12 T420,12 T480,12 T540,12 T600,12 T660,12 T720,12 T780,12 T840,12 T900,12 T960,12 T1020,12 T1080,12 T1140,12 T1200,12" stroke="var(--accent-blue)" stroke-width="1" fill="none" opacity="0.3"/><path d="M0,12 Q40,18 80,12 T160,12 T240,12 T320,12 T400,12 T480,12 T560,12 T640,12 T720,12 T800,12 T880,12 T960,12 T1040,12 T1120,12 T1200,12" stroke="var(--accent-red)" stroke-width="0.5" fill="none" opacity="0.15"/></svg></div>
 
         <!-- CAREER — Season Log -->
         <section class="career-section" id="career">
             <div class="inner">
                 <p class="label reveal">Career</p>
                 <h2 class="title reveal">Road to the Booth</h2>
-                <div class="season-log">
-                    <div class="season-card current reveal">
-                        <p class="season-date">2025 — Present</p>
-                        <h3 class="season-role">Director of Media & Communications / PxP Voice</h3>
-                        <p class="season-org">Biloxi Breakers — FPHL</p>
-                        <p class="season-desc">Primary play-by-play broadcaster for Biloxi's inaugural season under new ownership. Manages all media operations — broadcast, print, digital, social — and co-hosts the Breaker Banter podcast. Supports group ticket sales and community relations.</p>
-                    </div>
-                    <div class="season-card reveal">
-                        <p class="season-date">2023 — 2024</p>
-                        <h3 class="season-role">Play-by-Play Broadcaster</h3>
-                        <p class="season-org">Danville Dashers — FPHL</p>
-                        <p class="season-desc">First professional broadcasting season. Full PxP duties for home and away coverage in Danville's final FPHL campaign.</p>
-                    </div>
-                    <div class="season-card reveal">
-                        <p class="season-date">2021 — 2024 (Summers)</p>
-                        <h3 class="season-role">Director of Broadcasting</h3>
-                        <p class="season-org">Harwich Mariners — Cape Cod Baseball League</p>
-                        <p class="season-desc">Three seasons producing and calling full-season coverage for one of the Cape League's premier franchises. League championship in 2024.</p>
-                    </div>
-                    <div class="season-card reveal">
-                        <p class="season-date">2020 (Summer)</p>
-                        <h3 class="season-role">Play-by-Play Broadcaster</h3>
-                        <p class="season-org">Valley Blue Sox — NECBL</p>
-                        <p class="season-desc">First summer collegiate baseball assignment. Full-season PxP for the New England Collegiate Baseball League.</p>
-                    </div>
-                    <div class="season-card reveal">
-                        <p class="season-date">2018 — 2022</p>
-                        <h3 class="season-role">Sports Director & ESPN+ PxP</h3>
-                        <p class="season-org">91.1 WMUA — UMass Amherst</p>
-                        <p class="season-desc">Led the student radio sports department. Play-by-play on ESPN+ for UMass hockey and men's basketball. Produced live broadcasts and podcasts. B.S. Marketing, 2022.</p>
-                    </div>
-                    <div class="season-card reveal">
-                        <p class="season-date">2016 — 2018</p>
-                        <h3 class="season-role">Play-by-Play Broadcaster</h3>
-                        <p class="season-org">East Longmeadow Local Station</p>
-                        <p class="season-desc">Primary PxP voice for high school football, hockey, and basketball. Senior year cut short by COVID-19 — passion for broadcasting only grew stronger.</p>
+                <div class="timeline">
+                    <div class="timeline-line" aria-hidden="true"></div>
+                    <div class="season-log">
+                        <div class="season-card current reveal">
+                            <div class="timeline-dot" aria-hidden="true"></div>
+                            <p class="season-date">2025 — Present</p>
+                            <h3 class="season-role">Director of Media & Communications / PxP Voice</h3>
+                            <p class="season-org">Biloxi Breakers — FPHL</p>
+                            <p class="season-desc">Primary play-by-play broadcaster for Biloxi's inaugural season under new ownership. Manages all media operations — broadcast, print, digital, social — and co-hosts the Breaker Banter podcast. Supports group ticket sales and community relations.</p>
+                        </div>
+                        <div class="season-card reveal">
+                            <div class="timeline-dot" aria-hidden="true"></div>
+                            <p class="season-date">2023 — 2024</p>
+                            <h3 class="season-role">Play-by-Play Broadcaster</h3>
+                            <p class="season-org">Danville Dashers — FPHL</p>
+                            <p class="season-desc">First professional broadcasting season. Full PxP duties for home and away coverage in Danville's final FPHL campaign.</p>
+                        </div>
+                        <div class="season-card reveal">
+                            <div class="timeline-dot" aria-hidden="true"></div>
+                            <p class="season-date">2021 — 2024 (Summers)</p>
+                            <h3 class="season-role">Director of Broadcasting</h3>
+                            <p class="season-org">Harwich Mariners — Cape Cod Baseball League</p>
+                            <p class="season-desc">Three seasons producing and calling full-season coverage for one of the Cape League's premier franchises. League championship in 2024.</p>
+                        </div>
+                        <div class="season-card reveal">
+                            <div class="timeline-dot" aria-hidden="true"></div>
+                            <p class="season-date">2020 (Summer)</p>
+                            <h3 class="season-role">Play-by-Play Broadcaster</h3>
+                            <p class="season-org">Valley Blue Sox — NECBL</p>
+                            <p class="season-desc">First summer collegiate baseball assignment. Full-season PxP for the New England Collegiate Baseball League.</p>
+                        </div>
+                        <div class="season-card reveal">
+                            <div class="timeline-dot" aria-hidden="true"></div>
+                            <p class="season-date">2018 — 2022</p>
+                            <h3 class="season-role">Sports Director & ESPN+ PxP</h3>
+                            <p class="season-org">91.1 WMUA — UMass Amherst</p>
+                            <p class="season-desc">Led the student radio sports department. Play-by-play on ESPN+ for UMass hockey and men's basketball. Produced live broadcasts and podcasts. B.S. Marketing, 2022.</p>
+                        </div>
+                        <div class="season-card reveal">
+                            <div class="timeline-dot" aria-hidden="true"></div>
+                            <p class="season-date">2016 — 2018</p>
+                            <h3 class="season-role">Play-by-Play Broadcaster</h3>
+                            <p class="season-org">East Longmeadow Local Station</p>
+                            <p class="season-desc">Primary PxP voice for high school football, hockey, and basketball. Senior year cut short by COVID-19 — passion for broadcasting only grew stronger.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="section-divider" aria-hidden="true"></div>
+        <div class="section-divider waveform" aria-hidden="true"><svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0,12 Q30,4 60,12 T120,12 T180,12 T240,12 T300,12 T360,12 T420,12 T480,12 T540,12 T600,12 T660,12 T720,12 T780,12 T840,12 T900,12 T960,12 T1020,12 T1080,12 T1140,12 T1200,12" stroke="var(--accent-blue)" stroke-width="1" fill="none" opacity="0.3"/><path d="M0,12 Q40,18 80,12 T160,12 T240,12 T320,12 T400,12 T480,12 T560,12 T640,12 T720,12 T800,12 T880,12 T960,12 T1040,12 T1120,12 T1200,12" stroke="var(--accent-red)" stroke-width="0.5" fill="none" opacity="0.15"/></svg></div>
 
         <!-- SKILLS — Lower Thirds -->
         <section class="skills-section" id="skills">
@@ -236,27 +254,27 @@
                 <p class="label reveal">What I Bring</p>
                 <h2 class="title reveal">Skill Set</h2>
                 <div class="skills-grid">
-                    <div class="skill-lower-third reveal">
+                    <div class="skill-lower-third reveal" data-reveal="lower-third">
                         <div class="skill-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><path d="M4.93 4.93l14.14 14.14"/><path d="M19.07 4.93L4.93 19.07"/></svg></div>
                         <h4>Live Hockey PxP</h4>
                     </div>
-                    <div class="skill-lower-third reveal">
+                    <div class="skill-lower-third reveal" data-reveal="lower-third">
                         <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
                         <h4>On-Camera & Remote Broadcasting</h4>
                     </div>
-                    <div class="skill-lower-third reveal">
+                    <div class="skill-lower-third reveal" data-reveal="lower-third">
                         <div class="skill-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
                         <h4>Pre & Post-Game Production</h4>
                     </div>
-                    <div class="skill-lower-third reveal">
+                    <div class="skill-lower-third reveal" data-reveal="lower-third">
                         <div class="skill-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
                         <h4>Video Editing & Highlights</h4>
                     </div>
-                    <div class="skill-lower-third reveal">
+                    <div class="skill-lower-third reveal" data-reveal="lower-third">
                         <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012 7.5v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></div>
                         <h4>Social Media & Digital Content</h4>
                     </div>
-                    <div class="skill-lower-third reveal">
+                    <div class="skill-lower-third reveal" data-reveal="lower-third">
                         <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
                         <h4>Full Media Operations</h4>
                     </div>
@@ -264,20 +282,37 @@
             </div>
         </section>
 
-        <!-- MEDIA BAR -->
+        <!-- MEDIA TICKER -->
         <div class="media-bar">
-            <div class="inner">
-                <span class="media-item">FPHL</span>
-                <span class="media-sep" aria-hidden="true">//</span>
-                <span class="media-item">ESPN+</span>
-                <span class="media-sep" aria-hidden="true">//</span>
-                <span class="media-item">WLOX TV</span>
-                <span class="media-sep" aria-hidden="true">//</span>
-                <span class="media-item">Cape Cod League</span>
-                <span class="media-sep" aria-hidden="true">//</span>
-                <span class="media-item">NECBL</span>
-                <span class="media-sep" aria-hidden="true">//</span>
-                <span class="media-item">91.1 WMUA</span>
+            <div class="ticker-track">
+                <div class="ticker-content">
+                    <span class="media-item">FPHL</span>
+                    <span class="media-sep" aria-hidden="true">//</span>
+                    <span class="media-item">ESPN+</span>
+                    <span class="media-sep" aria-hidden="true">//</span>
+                    <span class="media-item">WLOX TV</span>
+                    <span class="media-sep" aria-hidden="true">//</span>
+                    <span class="media-item">Cape Cod League</span>
+                    <span class="media-sep" aria-hidden="true">//</span>
+                    <span class="media-item">NECBL</span>
+                    <span class="media-sep" aria-hidden="true">//</span>
+                    <span class="media-item">91.1 WMUA</span>
+                    <span class="media-sep" aria-hidden="true">//</span>
+                </div>
+                <div class="ticker-content" aria-hidden="true">
+                    <span class="media-item">FPHL</span>
+                    <span class="media-sep">//</span>
+                    <span class="media-item">ESPN+</span>
+                    <span class="media-sep">//</span>
+                    <span class="media-item">WLOX TV</span>
+                    <span class="media-sep">//</span>
+                    <span class="media-item">Cape Cod League</span>
+                    <span class="media-sep">//</span>
+                    <span class="media-item">NECBL</span>
+                    <span class="media-sep">//</span>
+                    <span class="media-item">91.1 WMUA</span>
+                    <span class="media-sep">//</span>
+                </div>
             </div>
         </div>
 
