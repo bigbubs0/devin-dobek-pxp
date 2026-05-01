@@ -545,6 +545,32 @@ section { padding: 100px 24px; }
     font-family: var(--font-body); font-size: 0.85rem; color: var(--text-muted);
     line-height: 1.7; font-weight: 300;
 }
+.season-bullets {
+    list-style: none;
+    padding: 0;
+    margin-top: 4px;
+}
+.season-bullets li {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-weight: 300;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 6px;
+}
+.season-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 8px;
+    height: 1px;
+    background: var(--accent-blue);
+    opacity: 0.7;
+}
+.season-bullets li:last-child { margin-bottom: 0; }
 
 /* ===== SKILLS — LOWER THIRDS ===== */
 .skills-section { background: var(--bg-secondary); }
