@@ -728,7 +728,10 @@ section { padding: 100px 24px; }
 .contact-email {
     font-family: var(--font-mono); font-size: 0.95rem; color: var(--accent-red);
     letter-spacing: 0.04em; transition: color var(--ease);
-    display: inline-block; margin-bottom: 40px;
+    display: inline-block; margin-bottom: 24px;
+}
+.contact-resume-wrap {
+    margin-bottom: 40px;
 }
 .contact-email:hover { color: var(--accent-amber); }
 .socials { display: flex; justify-content: center; gap: 24px; }
