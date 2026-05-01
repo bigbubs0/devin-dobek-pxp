@@ -509,6 +509,87 @@ section { padding: 100px 24px; }
     border-bottom: 2px solid var(--accent-red); border-left: 2px solid var(--accent-red);
 }
 
+/* ===== THE DREAM — Origin story prose ===== */
+.dream { background: var(--bg-primary); }
+
+.dream-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto 56px;
+}
+.dream-photo {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    margin: 0;
+}
+.dream-photo::before {
+    content: ''; position: absolute; top: -1px; left: -1px;
+    width: 24px; height: 24px;
+    border-top: 2px solid var(--accent-blue);
+    border-left: 2px solid var(--accent-blue);
+    z-index: 2;
+}
+.dream-photo::after {
+    content: ''; position: absolute; bottom: -1px; right: -1px;
+    width: 24px; height: 24px;
+    border-bottom: 2px solid var(--accent-red);
+    border-right: 2px solid var(--accent-red);
+    z-index: 2;
+}
+.dream-photo img {
+    width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5;
+    display: block;
+}
+.dream-photo figcaption {
+    position: absolute; bottom: 12px; left: 12px;
+    font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 4px 10px;
+    background: rgba(8,8,13,0.85); color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+    border-left: 2px solid var(--accent-amber);
+}
+
+.dream-prose {
+    max-width: 720px; margin: 0 auto;
+}
+.dream-prose p {
+    font-family: var(--font-body);
+    font-size: 1.02rem;
+    line-height: 1.85;
+    color: var(--text-primary);
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+.dream-prose p:last-child { margin-bottom: 0; }
+.dream-tagline-inline {
+    color: var(--accent-amber);
+    font-style: italic;
+}
+
+.dream-pullquote {
+    max-width: 720px;
+    margin: 56px auto 0;
+    padding: 32px 40px;
+    border-left: 3px solid var(--accent-red);
+    background: linear-gradient(90deg, rgba(230,57,70,0.04), transparent);
+    position: relative;
+}
+.dream-pullquote p {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-heading);
+    line-height: 1.3;
+    font-style: italic;
+}
+
 /* ===== CAREER — SEASON LOG ===== */
 .career-section { background: var(--bg-primary); }
 .season-log { display: flex; flex-direction: column; gap: 12px; }
@@ -838,6 +919,8 @@ footer p span { color: var(--accent-red); }
     .timeline { padding-left: 28px; }
     .timeline-dot { left: -33px; }
     .reveal[data-reveal="lower-third"] { transform: translateX(-60px); }
+    .dream-photos { grid-template-columns: 1fr; gap: 16px; }
+    .dream-pullquote { padding: 24px 24px 24px 28px; }
 }
 @media (max-width: 480px) {
     .skills-grid { grid-template-columns: 1fr; }
