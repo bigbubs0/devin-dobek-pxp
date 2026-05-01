@@ -418,6 +418,7 @@ section { padding: 100px 24px; }
 }
 .badge-hockey { background: var(--accent-red); color: white; }
 .badge-tv { background: var(--accent-amber); color: var(--bg-primary); }
+.badge-baseball { background: var(--accent-blue); color: white; }
 
 .demo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .demo-card {
