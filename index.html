@@ -185,7 +185,7 @@
 
         <div class="section-divider waveform" aria-hidden="true"><svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0,12 Q30,4 60,12 T120,12 T180,12 T240,12 T300,12 T360,12 T420,12 T480,12 T540,12 T600,12 T660,12 T720,12 T780,12 T840,12 T900,12 T960,12 T1020,12 T1080,12 T1140,12 T1200,12" stroke="var(--accent-blue)" stroke-width="1" fill="none" opacity="0.3"/><path d="M0,12 Q40,18 80,12 T160,12 T240,12 T320,12 T400,12 T480,12 T560,12 T640,12 T720,12 T800,12 T880,12 T960,12 T1040,12 T1120,12 T1200,12" stroke="var(--accent-red)" stroke-width="0.5" fill="none" opacity="0.15"/></svg></div>
 
-        <!-- ABOUT + ORIGIN — Combined -->
+        <!-- ABOUT — Walkout anchor + bio -->
         <section class="about" id="about">
             <div class="inner">
                 <div class="about-header">
@@ -193,31 +193,14 @@
                     <h2 class="title reveal">Built for the Booth</h2>
                 </div>
 
-                <!-- Origin comparison — centerpiece -->
-                <div class="about-origin reveal" data-reveal="scale">
-                    <div class="origin-card">
-                        <div class="origin-img">
-                            <img src="images/childhood.jpg" alt="Young Devin Dobek calling games from his Bruins-decorated bedroom, circa 2011">
-                            <span class="origin-badge">~2011</span>
-                        </div>
-                        <div class="origin-arrow" aria-hidden="true"></div>
-                        <div class="origin-img">
-                            <img src="images/booth.jpg" alt="Devin Dobek in the professional broadcast booth, 2025">
-                            <span class="origin-badge">2025</span>
-                        </div>
-                    </div>
+                <!-- Visual anchor: walkout shot. Then/Now origin pair lives in The Dream. -->
+                <div class="about-anchor reveal" data-reveal="scale">
+                    <img src="images/headshot.jpg" alt="Devin Dobek in a navy suit walking through the arena corridor on game day">
                 </div>
 
-                <!-- Bio + headshot -->
-                <div class="about-content">
-                    <div class="about-text reveal" data-reveal="slide-left">
-                        <p class="bio">Professional play-by-play broadcaster and Director of Media &amp; Communications for the Biloxi Breakers of the FPHL. Two professional hockey seasons behind the mic, four summers calling collegiate baseball in the NECBL and Cape Cod League — including a league championship with the Harwich Mariners in 2024. UMass Amherst graduate with a marketing degree, former Sports Director at 91.1 WMUA, and ESPN+ play-by-play voice for UMass athletics. Beyond the booth, experienced in managing all media operations — print, digital, social — and producing original content including the Breaker Banter podcast.</p>
-                    </div>
-                    <div class="reveal" data-reveal="slide-right">
-                        <div class="about-photo">
-                            <img src="images/headshot.jpg" alt="Devin Dobek in the broadcast booth with headset" style="width:100%;height:100%;object-fit:cover;">
-                        </div>
-                    </div>
+                <!-- Bio sits below the anchor, full width. -->
+                <div class="about-text reveal" data-reveal="slide-left">
+                    <p class="bio">Professional play-by-play broadcaster and Director of Media &amp; Communications for the Biloxi Breakers of the FPHL. Two professional hockey seasons behind the mic, four summers calling collegiate baseball in the NECBL and Cape Cod League — including a league championship with the Harwich Mariners in 2024. UMass Amherst graduate with a marketing degree, former Sports Director at 91.1 WMUA, and ESPN+ play-by-play voice for UMass athletics. Beyond the booth, experienced in managing all media operations — print, digital, social — and producing original content including the Breaker Banter podcast.</p>
                 </div>
             </div>
         </section>
@@ -230,9 +213,7 @@
                 <p class="label reveal">The Story</p>
                 <h2 class="title reveal">The Dream</h2>
 
-                <!-- Photos reuse the existing childhood.jpg and booth.jpg files (same images
-                     used in the about-origin comparison). Swap to dedicated files if Devin
-                     sends different photos for this section later. -->
+                <!-- Then/Now photos. Swap to dedicated files if Devin sends different photos later. -->
                 <div class="dream-photos reveal" data-reveal="scale">
                     <figure class="dream-photo">
                         <img src="images/childhood.jpg" alt="Young Devin Dobek with a microphone, early years">
@@ -490,8 +471,6 @@
                 <h2 class="title reveal">Let's Talk</h2>
                 <p class="contact-sub reveal">Always Remember to Live the Dream.</p>
                 <a href="mailto:devdobek@yahoo.com" class="contact-email reveal">devdobek@yahoo.com</a>
-                <!-- Drop the resume PDF at images/devin-dobek-resume.pdf when finalized.
-                     Until then this link will 404 — placeholder until Bryan delivers the file. -->
                 <div class="contact-resume-wrap reveal">
                     <a href="images/devin-dobek-resume.pdf" class="btn btn-ghost contact-resume" download>Download Resume</a>
                 </div>
