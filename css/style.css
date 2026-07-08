@@ -717,23 +717,6 @@ section { padding: 100px 24px; }
 }
 .soc-link svg { width: 20px; height: 20px; fill: var(--text-muted); transition: fill var(--ease); }
 .soc-link:hover svg { fill: var(--text-heading); }
-.contact-form { max-width: 480px; margin: 48px auto 0; text-align: left; }
-.fg { margin-bottom: 20px; }
-.fg label {
-    font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 8px;
-}
-.fg input, .fg textarea {
-    width: 100%; background: var(--bg-monitor); border: 1px solid var(--border-monitor);
-    color: var(--text-primary); font-family: var(--font-body); font-size: 0.9rem;
-    padding: 12px 16px; transition: border-color var(--ease), box-shadow var(--ease);
-}
-.fg input:focus, .fg textarea:focus {
-    outline: none; border-color: var(--accent-red);
-    box-shadow: 0 0 0 1px var(--accent-red-glow);
-}
-.fg textarea { height: 120px; resize: vertical; }
-.form-submit { text-align: center; margin-top: 32px; }
 
 /* ===== FOOTER ===== */
 footer {
